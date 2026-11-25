@@ -1,707 +1,971 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth dark">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venkata Pavan Inkollu | Data Scientist & Machine Learning Engineer</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    }
-                }
-            }
-        };
-    </script>
-    <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-        html, body {
-            margin: 0;
-            padding: 0;
-            background-color: #0B1120;
-            color: #E2E8F0;
-            overflow-x: hidden;
-        }
-        /* Subtle technical grid pattern */
-        .bg-grid-pattern {
-            background-image:
-                linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        /* Crisp glass card surface */
-        .glass-card {
-            background: rgba(15, 23, 42, 0.78);
-            border: 1px solid rgba(148, 163, 184, 0.14);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .glass-card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venkata Pavan Inkollu | Data Scientist & Machine Learning Engineer | 2026</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="description"
+    content="Venkata Pavan Inkollu - Data Scientist & Machine Learning Engineer specializing in Python, Scikit-Learn, XGBoost, PyTorch, SQL, Power BI, and Streamlit applications. Based in Hyderabad / Ongole, India.">
+  <meta name="keywords"
+    content="Venkata Pavan Inkollu, Data Scientist, Machine Learning Engineer, Python, PyTorch, XGBoost, LightGBM, SHAP, Optuna, MySQL, Power BI, Streamlit, Hyderabad, Ongole">
+  <meta name="author" content="Venkata Pavan Inkollu">
+  <meta name="theme-color" content="#FF5722">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        fontFamily: {
+          'sans': ['Inter', 'sans-serif'],
+          'poppins': ['Poppins', 'sans-serif'],
+        },
+        extend: {
+          colors: {
+            primary: {
+              50: '#FFF5F2',
+              100: '#FFF0EA',
+              200: '#FFE1D5',
+              300: '#FFC7AD',
+              400: '#FF8A59',
+              500: '#FF5722',
+              600: '#F93C00',
+              700: '#C43000',
+              800: '#962400',
+              900: '#661800',
+            },
+            navy: {
+              50: '#F0F9FF',
+              100: '#E0F2FE',
+              200: '#B9E6FE',
+              300: '#7CD4FD',
+              400: '#36BFFA',
+              500: '#0BA5EC',
+              600: '#0080B4',
+              700: '#026AA2',
+              800: '#065986',
+              900: '#0F172A',
+            },
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'scroll': 'scroll 2s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            scroll: {
+              '0%': { transform: 'translateY(0)' },
+              '100%': { transform: 'translateY(14px)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Glass surface styling aligned with reference layout */
+    .glass {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .dark .glass {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    .section-kicker {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #FF5722;
+    }
+
+    .dark .section-kicker {
+      color: #FF8A59;
+    }
+
+    .skills-category__label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.9rem;
+    }
+
+    .skills-category__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skills-category__tags span {
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      background: rgba(255, 87, 34, 0.08);
+      color: #C43000;
+      border: 1px solid rgba(255, 87, 34, 0.2);
+    }
+
+    .dark .skills-category__tags span {
+      background: rgba(30, 41, 59, 0.85);
+      color: #F8FAFC;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    #particles-js {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
 </head>
-<body class="bg-grid-pattern font-sans antialiased selection:bg-sky-500/30 selection:text-sky-200">
 
-    <!-- Ambient Glow Accents (Strictly Non-Interactive & Clipped) -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-        <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-sky-500/10 blur-3xl"></div>
-        <div class="absolute top-1/2 -right-32 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl"></div>
+<body class="bg-gray-50 text-gray-800 dark:bg-navy-900 dark:text-gray-100 relative overflow-x-hidden">
+  <!-- Skip Link -->
+  <a href="#main-content"
+    class="fixed left-4 top-4 z-[100] -translate-y-24 rounded-lg bg-primary-600 px-4 py-3 text-white shadow-lg transition-transform focus:translate-y-0">
+    Skip to main content
+  </a>
+
+  <!-- Ambient Particles Canvas -->
+  <div id="particles-js" aria-hidden="true"></div>
+
+  <!-- Theme Toggle Button -->
+  <button type="button" id="theme-toggle-button"
+    class="fixed z-50 bottom-6 right-6 p-3 rounded-full shadow-lg backdrop-blur-md bg-white/80 dark:bg-navy-800/80 border border-gray-200 dark:border-navy-700 transition-all duration-300 hover:scale-110"
+    aria-label="Toggle dark mode">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-navy-900 dark:hidden" fill="none" viewBox="0 0 24 24"
+      stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300 hidden dark:block" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+  </button>
+
+  <!-- Scroll to Top Button -->
+  <button type="button" id="scroll-top"
+    class="fixed z-50 bottom-6 left-6 p-3 rounded-full shadow-lg backdrop-blur-md bg-white/80 dark:bg-navy-800/80 border border-gray-200 dark:border-navy-700 transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none"
+    aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-600 dark:text-primary-400" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-4 bg-white/80 dark:bg-navy-900/80 backdrop-blur-md border-b border-gray-200/70 dark:border-gray-800/80">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="#hero" aria-label="Back to top"
+        class="text-xl sm:text-2xl font-bold font-poppins text-gray-900 dark:text-white tracking-tight">
+        Venkata <span class="text-primary-500 dark:text-primary-400">Pavan</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 font-medium transition-colors">About</a>
+        <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 font-medium transition-colors">Projects</a>
+        <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 font-medium transition-colors">Skills</a>
+        <a href="#education" class="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 font-medium transition-colors">Education</a>
+        <a href="#contact"
+          class="px-5 py-2 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-full transition-all duration-300 shadow-md hover:shadow-lg font-medium">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button type="button" id="mobile-menu-button" aria-label="Toggle mobile menu"
+        class="md:hidden text-gray-700 dark:text-gray-300 p-2 rounded-lg focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
 
-    <!-- STICKY TOP NAVBAR -->
-    <header class="sticky top-0 z-40 w-full bg-[#0B1120]/90 backdrop-blur-md border-b border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-                    <!-- Brand -->
-            <a href="#top" class="flex items-center gap-2.5 shrink-0 group">
-                <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-400 to-emerald-400 text-slate-950 font-mono font-bold text-sm flex items-center justify-center shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform">
-                    PI
-                </span>
-                <span class="font-bold text-white text-sm sm:text-base tracking-tight">
-                    Venkata Pavan <span class="text-sky-400">Inkollu</span>
-                </span>
-            </a>
-
-            <!-- Center Navigation -->
-            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-sky-400 transition-colors">Overview</a>
-                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
-                <a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a>
-                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
-            </nav>
-
-            <!-- Right Actions -->
-            <div class="flex items-center gap-2.5 shrink-0">
-                <a href="https://www.linkedin.com/in/inkollu-venkata-pavan-59a001241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="w-9 h-9 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-sky-400 border border-slate-700/80 flex items-center justify-center transition-colors">
-                    <i class="fa-brands fa-linkedin-in text-base"></i>
-                </a>
-                <a href="https://github.com/InkolluPavan" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="w-9 h-9 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700/80 flex items-center justify-center transition-colors">
-                    <i class="fa-brands fa-github text-base"></i>
-                </a>
-                <a href="#contact" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-sky-500 hover:bg-sky-400 text-slate-950 transition-colors">
-                    <i class="fa-solid fa-paper-plane text-[11px]"></i>
-                    <span>Hire / Contact</span>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main id="top" class="relative z-10">
-
-        <!-- 1. HERO SECTION -->
-        <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-16 sm:pt-20 sm:pb-24">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-                <!-- Left Column: Identity & Intro -->
-                <div class="lg:col-span-7 flex flex-col items-start">
-                    <!-- Status & Location Pills -->
-                    <div class="flex flex-wrap items-center gap-2.5 mb-6">
-                        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                            Open to Data Analyst, Data Scientist &amp; ML Engineer Roles
-                        </span>
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/70 text-slate-300 text-xs font-mono">
-                            <i class="fa-solid fa-location-dot text-sky-400"></i>
-                            Hyderabad / Ongole, India
-                        </span>
-                    </div>
-
-                    <!-- Headline -->
-                    <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.15] mb-3">
-                        Hi, I'm <span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">Venkata Pavan Inkollu</span>
-                    </h1>
-                    <p class="text-base sm:text-lg font-mono text-sky-400 font-medium mb-5">
-                        Data Scientist &amp; Machine Learning Engineer | B.Tech CSE
-                    </p>
-
-                    <!-- Bio -->
-                    <p class="text-slate-300 text-base leading-relaxed mb-7 max-w-2xl">
-                        I design, validate, and deploy end-to-end machine learning systems and analytical pipelines—from modeling <span class="text-white font-semibold">5.8M+ flight records</span> in MySQL &amp; Power BI to building explainable <span class="text-white font-semibold">XGBoost + SHAP</span> credit risk engines and <span class="text-white font-semibold">PyTorch</span> computer vision apps on Streamlit.
-                    </p>
-
-                    <!-- Primary Action Row -->
-                    <div class="flex flex-wrap items-center gap-3.5 mb-7 w-full sm:w-auto">
-                        <a href="#projects" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm transition-colors shadow-lg shadow-sky-500/20">
-                            <span>View Deployed Projects</span>
-                            <i class="fa-solid fa-arrow-down text-xs"></i>
-                        </a>
-                        <a href="#skills" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-white font-semibold text-sm border border-slate-700 transition-colors">
-                            <i class="fa-solid fa-layer-group text-sky-400"></i>
-                            <span>Technical Skills</span>
-                        </a>
-                    </div>
-
-                    <!-- Quick Profile Strip -->
-                    <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-slate-400 pt-4 border-t border-slate-800/80 w-full">
-                        <a href="https://github.com/InkolluPavan" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-sky-400 transition-colors font-mono">
-                            <i class="fa-brands fa-github text-slate-200"></i>
-                            <span>github.com/InkolluPavan</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/inkollu-venkata-pavan-59a001241/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-sky-400 transition-colors font-mono">
-                            <i class="fa-brands fa-linkedin text-sky-400"></i>
-                            <span>LinkedIn Profile</span>
-                        </a>
-                        <button type="button" onclick="copyEmail()" class="inline-flex items-center gap-2 hover:text-emerald-400 transition-colors font-mono">
-                            <i class="fa-solid fa-envelope text-emerald-400"></i>
-                            <span>ipavan.2510@gmail.com</span>
-                            <i class="fa-regular fa-copy text-[11px] opacity-75"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Right Column: Production Telemetry Summary Card -->
-                <div class="lg:col-span-5">
-                    <div class="glass-card rounded-2xl p-6 shadow-2xl">
-                        <div class="flex items-center justify-between pb-4 mb-5 border-b border-slate-800">
-                            <div class="flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                                <span class="ml-1.5 text-xs font-mono text-slate-400">model_telemetry.json</span>
-                            </div>
-                            <span class="px-2.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-[11px] font-mono">
-                                Verified Metrics
-                            </span>
-                        </div>
-
-                        <div class="space-y-3 font-mono text-xs">
-                            <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/90 flex items-center justify-between gap-3">
-                                <div>
-                                    <div class="text-slate-400 text-[11px]">AeroPredict Engine</div>
-                                    <div class="text-white font-semibold mt-0.5">Stacked Ensemble + Power BI</div>
-                                </div>
-                                <span class="px-2.5 py-1 rounded-lg bg-sky-500/10 text-sky-300 border border-sky-500/20 shrink-0">
-                                    5.8M+ Rows
-                                </span>
-                            </div>
-
-                            <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/90 flex items-center justify-between gap-3">
-                                <div>
-                                    <div class="text-slate-400 text-[11px]">CreditSense Risk Scoring</div>
-                                    <div class="text-white font-semibold mt-0.5">XGBoost + SHAP + FastAPI</div>
-                                </div>
-                                <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 shrink-0">
-                                    0.9565 AUC
-                                </span>
-                            </div>
-
-                            <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/90 flex items-center justify-between gap-3">
-                                <div>
-                                    <div class="text-slate-400 text-[11px]">Vision CNN Inference</div>
-                                    <div class="text-white font-semibold mt-0.5">PyTorch Transfer Learning</div>
-                                </div>
-                                <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 shrink-0">
-                                    95.00% Acc
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
-                            <span>Stack: Python • SQL • PyTorch</span>
-                            <span class="text-emerald-400">● Live on Streamlit</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. HERO BENCHMARKS STRIP (4-Column Equal-Height Grid) -->
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
-                <div class="glass-card rounded-2xl p-5 flex flex-col justify-between h-full">
-                    <div class="text-xs font-mono text-slate-400">Flight Records Modeled</div>
-                    <div class="text-2xl sm:text-3xl font-extrabold font-mono text-sky-400 my-1.5">5.8M+</div>
-                    <div class="text-xs text-slate-400">AeroPredict SQL &amp; BI Warehouse</div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 flex flex-col justify-between h-full">
-                    <div class="text-xs font-mono text-slate-400">Credit Delinquency ROC-AUC</div>
-                    <div class="text-2xl sm:text-3xl font-extrabold font-mono text-emerald-400 my-1.5">0.9565</div>
-                    <div class="text-xs text-slate-400">CreditSense (0.8045 PR-AUC)</div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 flex flex-col justify-between h-full">
-                    <div class="text-xs font-mono text-slate-400">CNN Validation Accuracy</div>
-                    <div class="text-2xl sm:text-3xl font-extrabold font-mono text-cyan-300 my-1.5">95.00%</div>
-                    <div class="text-xs text-slate-400">Cats vs. Dogs PyTorch Model</div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 flex flex-col justify-between h-full">
-                    <div class="text-xs font-mono text-slate-400">Deployed ML Systems</div>
-                    <div class="text-2xl sm:text-3xl font-extrabold font-mono text-white my-1.5">3</div>
-                    <div class="text-xs text-slate-400">End-to-End Production Pipelines</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. FEATURED DEPLOYED PROJECTS (Balanced 3-Column Equal-Height Grid) -->
-        <section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-slate-800/70">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-                <div>
-                    <span class="text-xs font-mono uppercase tracking-wider text-sky-400">Production Showcase</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Featured Deployed Projects</h2>
-                    <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
-                        Three end-to-end machine learning, analytics, and deep learning systems—complete with live Streamlit apps, source repositories, and architectural breakdowns.
-                    </p>
-                </div>
-
-                <!-- Filter Pills -->
-                <div class="flex flex-wrap items-center gap-2 shrink-0">
-                    <button type="button" data-filter="all" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-sky-500 text-slate-950 transition-colors">
-                        All (3)
-                    </button>
-                    <button type="button" data-filter="Analytics & BI" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-medium bg-slate-800/90 text-slate-300 hover:bg-slate-700 border border-slate-700/80 transition-colors">
-                        Analytics &amp; BI
-                    </button>
-                    <button type="button" data-filter="Machine Learning" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-medium bg-slate-800/90 text-slate-300 hover:bg-slate-700 border border-slate-700/80 transition-colors">
-                        Machine Learning
-                    </button>
-                    <button type="button" data-filter="Deep Learning" class="filter-btn px-3.5 py-2 rounded-xl text-xs font-medium bg-slate-800/90 text-slate-300 hover:bg-slate-700 border border-slate-700/80 transition-colors">
-                        Deep Learning
-                    </button>
-                </div>
-            </div>
-
-            <!-- 3-Column Equal-Height Project Grid -->
-            <div id="projectsGrid" class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-                <!-- Rendered via JavaScript -->
-            </div>
-        </section>
-
-        <!-- 4. TECHNICAL SKILLS MATRIX (Balanced 4-Column Equal-Height Grid) -->
-        <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-slate-800/70">
-            <div class="mb-10">
-                <span class="text-xs font-mono uppercase tracking-wider text-emerald-400">Core Stack</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Technical Skills Matrix</h2>
-                <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
-                    Tools and frameworks used across data warehousing, statistical modeling, explainable AI, and cloud inference deployment.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-                <!-- Skill Card 1 -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between h-full">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/25 text-sky-400 flex items-center justify-center mb-4">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3 class="text-base font-bold text-white mb-1.5">Languages &amp; Core</h3>
-                        <p class="text-xs text-slate-400 mb-4">Querying, scripting, and BI formula modeling.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-2">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-sky-300">Python</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-sky-300">SQL (MySQL)</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-slate-200">DAX</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-slate-200">HTML/CSS</span>
-                    </div>
-                </div>
-
-                <!-- Skill Card 2 -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between h-full">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 flex items-center justify-center mb-4">
-                            <i class="fa-solid fa-brain"></i>
-                        </div>
-                        <h3 class="text-base font-bold text-white mb-1.5">Machine Learning &amp; DL</h3>
-                        <p class="text-xs text-slate-400 mb-4">Predictive ensembles, vision CNNs, and XAI.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-2">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-emerald-300">Scikit-Learn</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-emerald-300">XGBoost</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-slate-200">PyTorch</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-sky-300">SHAP</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-slate-200">Feature Engineering</span>
-                    </div>
-                </div>
-
-                <!-- Skill Card 3 -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between h-full">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-400 flex items-center justify-center mb-4">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
-                        <h3 class="text-base font-bold text-white mb-1.5">Data &amp; BI Analytics</h3>
-                        <p class="text-xs text-slate-400 mb-4">Multi-million-row analysis and KPI storytelling.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-2">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-sky-300">Pandas</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-slate-200">NumPy</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-amber-300">Power BI</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-slate-200">EDA</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-slate-200">KPI Design</span>
-                    </div>
-                </div>
-
-                <!-- Skill Card 4 -->
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between h-full">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/25 text-cyan-400 flex items-center justify-center mb-4">
-                            <i class="fa-solid fa-rocket"></i>
-                        </div>
-                        <h3 class="text-base font-bold text-white mb-1.5">Deployment &amp; MLOps</h3>
-                        <p class="text-xs text-slate-400 mb-4">Interactive apps, REST APIs, and model tracking.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-2">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-rose-300">Streamlit</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-emerald-300">FastAPI</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-sky-300">MLflow</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-slate-200">Git &amp; GitHub</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-slate-200">SQLAlchemy</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. CONTACT & CTA SECTION -->
-        <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-t border-slate-800/70">
-            <div class="glass-card rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto">
-                <span class="inline-block px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/25 text-sky-400 text-xs font-mono mb-4">
-                    Get In Touch
-                </span>
-                <h2 class="text-2xl sm:text-4xl font-bold text-white mb-3">
-                    Let's Build Data-Driven Solutions Together
-                </h2>
-                <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-                    Actively seeking opportunities as a <strong class="text-slate-200">Data Analyst</strong>, <strong class="text-slate-200">Data Scientist</strong>, or <strong class="text-slate-200">Machine Learning Engineer</strong>. Explore my live Streamlit apps above or connect directly below.
-                </p>
-
-                <div class="flex flex-wrap items-center justify-center gap-3.5">
-                    <a href="https://github.com/InkolluPavan" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-200 text-slate-950 font-semibold text-sm transition-colors">
-                        <i class="fa-brands fa-github text-base"></i>
-                        <span>GitHub Profile</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/inkollu-venkata-pavan-59a001241/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 text-sky-300 border border-sky-500/30 font-semibold text-sm transition-colors">
-                        <i class="fa-brands fa-linkedin text-base"></i>
-                        <span>LinkedIn Profile</span>
-                    </a>
-                    <a href="mailto:ipavan.2510@gmail.com" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-colors">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>Email Me</span>
-                    </a>
-                    <button type="button" onclick="copyEmail()" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-sm transition-colors">
-                        <i class="fa-regular fa-copy text-emerald-400"></i>
-                        <span>Copy ipavan.2510@gmail.com</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="relative z-10 border-t border-slate-800/80 py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-            <p>© 2026 Venkata Pavan Inkollu • Hyderabad / Ongole, India</p>
-            <div class="flex items-center gap-4 font-mono">
-                <a href="https://github.com/InkolluPavan" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors">GitHub</a>
-                <span>•</span>
-                <a href="https://www.linkedin.com/in/inkollu-venkata-pavan-59a001241/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors">LinkedIn</a>
-                <span>•</span>
-                <a href="#top" class="hover:text-sky-400 transition-colors">Back to Top ↑</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- PROJECT ARCHITECTURE & IMPACT MODAL -->
-    <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle">
-        <div class="bg-slate-900 border border-slate-700/80 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
-            <button type="button" onclick="closeProjectModal()" aria-label="Close modal" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition-colors">
-                <i class="fa-solid fa-xmark"></i>
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 hidden">
+      <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+      <div id="mobile-menu-content"
+        class="absolute right-0 top-0 h-full w-64 bg-white dark:bg-navy-800 shadow-xl transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-6">
+        <div>
+          <div class="flex justify-end mb-6">
+            <button aria-label="Close menu" type="button" id="close-mobile-menu"
+              class="text-gray-700 dark:text-gray-300 p-1 focus:outline-none">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
+          </div>
+          <nav class="space-y-5 text-base font-medium">
+            <a href="#about" class="mobile-nav-link block text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400">About</a>
+            <a href="#projects" class="mobile-nav-link block text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400">Projects</a>
+            <a href="#skills" class="mobile-nav-link block text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400">Skills</a>
+            <a href="#education" class="mobile-nav-link block text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400">Education</a>
+            <a href="#contact" class="mobile-nav-link block text-primary-600 dark:text-primary-400 font-semibold">Contact</a>
+          </nav>
+        </div>
+        <div class="pt-4 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-500 dark:text-gray-400">
+          Hyderabad / Ongole, India
+        </div>
+      </div>
+    </div>
+  </header>
 
-            <div class="flex flex-wrap items-center gap-2 mb-3">
-                <span id="modalCategory" class="px-2.5 py-1 rounded-lg bg-sky-500/10 border border-sky-500/25 text-sky-400 text-xs font-mono"></span>
-                <span id="modalMetric" class="px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-xs font-mono"></span>
+  <main id="main-content" class="relative z-10">
+    <!-- Hero Section -->
+    <section id="hero"
+      class="relative min-h-screen max-w-full px-6 sm:px-12 flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden bg-white dark:bg-navy-900">
+      <!-- Ambient Blur Accents -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-primary-500/10 dark:bg-primary-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-600/10 dark:bg-primary-600/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      </div>
+
+      <div class="container mx-auto z-10 max-w-6xl">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <!-- Left Column -->
+          <div class="lg:col-span-7 space-y-7">
+            <div class="space-y-3">
+              <span class="px-4 py-2 bg-primary-50 dark:bg-navy-800 rounded-lg text-primary-600 dark:text-primary-400 font-medium text-xs sm:text-sm tracking-wider uppercase inline-block">
+                Welcome to my portfolio
+              </span>
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold font-poppins text-gray-900 dark:text-white leading-tight">
+                Hi, I'm <br>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 via-primary-600 to-amber-500">
+                  Venkata Pavan Inkollu
+                </span>
+              </h1>
             </div>
 
-            <h3 id="modalProjectTitle" class="text-2xl font-bold text-white mb-4 pr-10"></h3>
+            <p class="text-xs sm:text-sm font-semibold tracking-widest uppercase text-primary-500 dark:text-primary-400">
+              Data Scientist &amp; Machine Learning Engineer &middot; B.Tech CSE
+            </p>
 
-            <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
-                <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800">
-                    <h4 class="text-xs font-mono uppercase tracking-wider text-sky-400 mb-1.5">Problem Statement</h4>
-                    <p id="modalProblem"></p>
-                </div>
+            <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+              I build machine learning and deep learning models, clean and analyze datasets with Python, SQL, and Power BI, and ship interactive Streamlit apps. Based in <span class="font-semibold text-gray-900 dark:text-white">Hyderabad / Ongole, India</span>.
+            </p>
 
-                <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800">
-                    <h4 class="text-xs font-mono uppercase tracking-wider text-emerald-400 mb-1.5">Technical Architecture</h4>
-                    <p id="modalArchitecture"></p>
+            <!-- Primary CTA Buttons -->
+            <div class="flex flex-wrap gap-4">
+              <a href="#contact"
+                class="group px-7 py-3.5 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all duration-300 shadow-md hover:shadow-lg font-medium inline-flex items-center gap-2">
+                <span>Get in Touch</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+              <a href="#projects"
+                class="group px-7 py-3.5 bg-primary-100 dark:bg-primary-900/30 hover:bg-primary-500 text-primary-700 dark:text-primary-300 hover:text-white rounded-lg border border-primary-300/60 dark:border-primary-700/40 transition-all duration-300 hover:-translate-y-0.5 font-medium inline-flex items-center gap-2">
+                <span>View Projects</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- 3 Metric Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
+              <div class="glass rounded-2xl px-5 py-4">
+                <div class="text-2xl font-bold font-poppins text-primary-600 dark:text-primary-400">5.8M+</div>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Flight records processed in AeroPredict</p>
+              </div>
+              <div class="glass rounded-2xl px-5 py-4">
+                <div class="text-2xl font-bold font-poppins text-primary-600 dark:text-primary-400">0.9565</div>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">ROC-AUC on credit delinquency modeling</p>
+              </div>
+              <div class="glass rounded-2xl px-5 py-4">
+                <div class="text-2xl font-bold font-poppins text-primary-600 dark:text-primary-400">95.00%</div>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">CNN validation accuracy on image classification</p>
+              </div>
+            </div>
+
+            <!-- Tech Stack Pills -->
+            <div class="pt-2">
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Core Stack</p>
+              <div class="flex flex-wrap gap-2.5">
+                <span class="px-4 py-1.5 bg-gray-100 dark:bg-navy-800 rounded-lg text-gray-700 dark:text-gray-300 text-sm font-medium border border-gray-200/80 dark:border-gray-700/70">Python</span>
+                <span class="px-4 py-1.5 bg-gray-100 dark:bg-navy-800 rounded-lg text-gray-700 dark:text-gray-300 text-sm font-medium border border-gray-200/80 dark:border-gray-700/70">SQL</span>
+                <span class="px-4 py-1.5 bg-gray-100 dark:bg-navy-800 rounded-lg text-gray-700 dark:text-gray-300 text-sm font-medium border border-gray-200/80 dark:border-gray-700/70">PyTorch</span>
+                <span class="px-4 py-1.5 bg-gray-100 dark:bg-navy-800 rounded-lg text-gray-700 dark:text-gray-300 text-sm font-medium border border-gray-200/80 dark:border-gray-700/70">XGBoost</span>
+                <span class="px-4 py-1.5 bg-gray-100 dark:bg-navy-800 rounded-lg text-gray-700 dark:text-gray-300 text-sm font-medium border border-gray-200/80 dark:border-gray-700/70">Power BI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Inline SVG + Summary Visual Card -->
+          <div class="lg:col-span-5">
+            <div class="relative max-w-md mx-auto">
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-amber-500/20 rounded-2xl transform rotate-3"></div>
+              <div class="relative glass rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+                <div class="flex items-center gap-4">
+                  <!-- Inline SVG Monogram Avatar -->
+          <!-- Right Column: Portrait & Summary Visual Card -->
+          <div class="lg:col-span-5">
+            <div class="relative max-w-md mx-auto">
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-amber-500/20 rounded-2xl transform rotate-3"></div>
+              <div class="relative glass rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+                <!-- Strict 1:1 Square Portrait Frame with Multi-Step Fallback -->
+                <div class="relative aspect-square w-full max-w-[420px] mx-auto rounded-xl overflow-hidden border-2 border-primary-500/25 bg-gradient-to-br from-primary-500/15 to-navy-800 shadow-inner">
+                  <img
+                    src="https://lh3.googleusercontent.com/d/1YRrceZ4hgEHrZINXJpXhmNOnMOQmalb1"
+                    alt="Venkata Pavan Inkollu"
+                    referrerpolicy="no-referrer"
+                    class="w-full h-full object-cover object-top"
+                    onerror="if(!this.dataset.triedFallback){this.dataset.triedFallback='1';this.src='https://drive.google.com/uc?export=view&id=1YRrceZ4hgEHrZINXJpXhmNOnMOQmalb1';}else{this.style.display='none';this.nextElementSibling.classList.remove('hidden');this.nextElementSibling.classList.add('flex');}"
+                  >
+                  <!-- Clean Initials Fallback if Drive Embedding is Blocked -->
+                  <div class="hidden w-full h-full flex-col items-center justify-center bg-gradient-to-br from-primary-500 to-amber-500 text-white p-6 text-center">
+                    <span class="text-5xl font-bold font-poppins tracking-tight">VP</span>
+                    <span class="text-xs uppercase tracking-widest mt-2 opacity-90">Venkata Pavan Inkollu</span>
+                  </div>
                 </div>
 
                 <div>
-                    <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Key Results &amp; Engineering Impact</h4>
-                    <ul id="modalResults" class="space-y-2 text-slate-300"></ul>
+                  <h2 class="text-lg font-bold font-poppins text-gray-900 dark:text-white">Venkata Pavan Inkollu</h2>
+                  <p class="text-sm text-primary-600 dark:text-primary-400 font-medium">Data Scientist &amp; ML Engineer</p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">B.Tech CSE &middot; CGPA 7.01</p>
                 </div>
 
-                <div>
-                    <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Tech Stack</h4>
-                    <div id="modalTags" class="flex flex-wrap gap-2"></div>
+                <div class="space-y-3 border-t border-gray-200 dark:border-gray-800 pt-5 text-sm">
+                  <div class="flex items-center justify-between py-2 px-3 rounded-xl bg-gray-100/80 dark:bg-navy-800/80">
+                    <span class="text-gray-500 dark:text-gray-400">Location</span>
+                    <span class="font-medium text-gray-900 dark:text-white">Hyderabad / Ongole, India</span>
+                  </div>
+                  <div class="flex items-center justify-between py-2 px-3 rounded-xl bg-gray-100/80 dark:bg-navy-800/80">
+                    <span class="text-gray-500 dark:text-gray-400">Focus</span>
+                    <span class="font-medium text-gray-900 dark:text-white">Tabular ML, CV &amp; BI</span>
+                  </div>
+                  <div class="flex items-center justify-between py-2 px-3 rounded-xl bg-gray-100/80 dark:bg-navy-800/80">
+                    <span class="text-gray-500 dark:text-gray-400">Deployed Apps</span>
+                    <span class="font-medium text-primary-600 dark:text-primary-400">2 Live Streamlit Apps</span>
+                  </div>
                 </div>
+
+                <div class="flex items-center gap-3 pt-1">
+                  <a href="https://github.com/InkolluPavan" target="_blank" rel="noopener noreferrer"
+                    class="flex-1 py-2.5 px-4 rounded-xl bg-gray-900 dark:bg-navy-800 hover:bg-gray-800 dark:hover:bg-navy-700 text-white text-sm font-medium text-center transition-colors">
+                    <i class="fa-brands fa-github mr-1.5"></i>GitHub
+                  </a>
+                  <a href="https://www.linkedin.com/in/inkollu-venkata-pavan-59a001241/" target="_blank" rel="noopener noreferrer"
+                    class="flex-1 py-2.5 px-4 rounded-xl bg-primary-500/15 hover:bg-primary-500/25 text-primary-700 dark:text-primary-300 border border-primary-500/30 text-sm font-medium text-center transition-colors">
+                    <i class="fa-brands fa-linkedin-in mr-1.5"></i>LinkedIn
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="mt-6 pt-5 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3">
-                <div id="modalActions" class="flex flex-wrap items-center gap-3"></div>
-                <button type="button" onclick="closeProjectModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium">
-                    Close
-                </button>
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-50 dark:bg-navy-900/50 relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10 max-w-6xl">
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-7 space-y-5">
+            <span class="section-kicker">About Me</span>
+            <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 dark:text-white">
+              Practical Data Science, ML &amp; Analytics
+            </h2>
+            <div class="h-1 w-24 bg-primary-500 dark:bg-primary-400"></div>
+
+            <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-base">
+              <p>
+                I'm Venkata Pavan Inkollu, a Computer Science graduate from <strong class="text-gray-900 dark:text-white">RISE Krishna Sai Prakasam Group of Institutions, Ongole</strong> (B.Tech CSE, CGPA 7.01), focused on turning messy datasets into clear analysis and working machine learning models.
+              </p>
+              <p>
+                Most of my hands-on builds sit at the intersection of data preparation, modeling, and lightweight web apps—from processing millions of operational flight records and building Power BI views to tuning gradient boosting models with Optuna, explaining predictions with SHAP, and training computer vision models in PyTorch.
+              </p>
+              <p>
+                Along the way, I've gained practical experience through internships and structured training: working as a <strong class="text-gray-900 dark:text-white">Data Analytics Intern at Galactix Solutions</strong> (Feb–Mar 2026) cleaning real-time datasets and helping with reports and dashboards, training as a <strong class="text-gray-900 dark:text-white">Certified Data Scientist &amp; ML Specialist at Pred Ai Solutions</strong> (Apr–Oct 2026), and completing <strong class="text-gray-900 dark:text-white">Data Science training at Unicus Learning</strong> (Jul 2025–Jan 2026).
+              </p>
             </div>
-        </div>
-    </div>
+          </div>
 
-    <!-- TOAST FEEDBACK -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="px-4 py-3 rounded-xl bg-slate-800 border border-sky-500/40 text-white text-xs sm:text-sm font-medium shadow-2xl flex items-center gap-2.5">
-            <i class="fa-solid fa-circle-check text-emerald-400"></i>
-            <span id="toastText">Copied!</span>
-        </div>
-    </div>
-
-    <script>
-        const CONTACT_EMAIL = "ipavan.2510@gmail.com";
-
-        const PROJECTS = [
-            {
-                id: "aeropredict",
-                title: "AeroPredict: Flight Network Analytics",
-                category: "Analytics & BI",
-                metric: "5.8M Flight Records",
-                summary: "End-to-end flight delay prediction and airline network intelligence system processing 5.8 million records across MySQL, Power BI DAX dashboards, stacked ensemble ML models, and a live Streamlit web app.",
-                tags: ["Python", "Scikit-Learn", "MySQL", "Power BI (DAX)", "Streamlit"],
-                liveUrl: "https://flights-delay-predictor-9k4hus3euurmtxvrctjxtd.streamlit.app/",
-                githubUrl: "https://github.com/InkolluPavan/flights-delay-predictor/",
-                isPrivate: false,
-                problem: "Commercial airlines face cascading schedule disruptions and high operational costs from flight delays across congested hubs, requiring both historical BI visibility and real-time route delay forecasting.",
-                architecture: "Ingested and indexed 5.8M+ flight records into a normalized MySQL warehouse, modeled interactive KPIs in Power BI using custom DAX measures, and trained a stacked Scikit-Learn regression ensemble deployed via Streamlit.",
-                results: [
-                    "Processed and queried 5.8M+ commercial flight records with optimized MySQL indexing.",
-                    "Built executive Power BI dashboards tracking carrier on-time performance, weather bottlenecks, and hub delays.",
-                    "Deployed a public Streamlit predictor allowing instant route-level delay estimation."
-                ]
-            },
-            {
-                id: "creditsense",
-                title: "CreditSense: Credit Delinquency Risk Engine",
-                category: "Machine Learning",
-                metric: "0.9565 ROC-AUC",
-                summary: "Chronological-split XGBoost credit risk scoring pipeline achieving 0.9565 ROC-AUC and 0.8045 PR-AUC, complete with SHAP local/global explainability, MLflow registry, FastAPI inference service, and Streamlit approval-queue dashboard.",
-                tags: ["XGBoost", "SHAP", "FastAPI", "MLflow", "Streamlit"],
-                liveUrl: "",
-                githubUrl: "",
-                isPrivate: true,
-                problem: "Financial underwriting requires high precision on imbalanced delinquency cohorts without temporal data leakage, paired with transparent per-applicant explanations for risk compliance.",
-                architecture: "Enforced strict chronological train/validation splits, trained a tuned XGBoost classifier tracked in MLflow, integrated SHAP value attributions, and exposed low-latency predictions through FastAPI and a Streamlit underwriter queue.",
-                results: [
-                    "Achieved 0.9565 ROC-AUC and 0.8045 PR-AUC on out-of-time validation cohorts.",
-                    "Generated real-time SHAP force and summary attributions for auditable lending decisions.",
-                    "Engineered modular FastAPI + Streamlit inference pipeline under collaborative Track A engineering."
-                ]
-            },
-            {
-                id: "catsdogs",
-                title: "Cats vs. Dogs Image Classifier",
-                category: "Deep Learning",
-                metric: "95.00% Val Accuracy",
-                summary: "Transfer-learning convolutional neural network trained in PyTorch with automated preprocessing, data augmentation, validation checkpointing, and an interactive Streamlit image inference interface.",
-                tags: ["PyTorch", "Transfer Learning", "Torchvision", "Streamlit", "Python"],
-                liveUrl: "https://catsdogsclassification-3tyssjjcp3jjqxf23hg4bv.streamlit.app/",
-                githubUrl: "https://github.com/InkolluPavan/cats_dogs_classification",
-                isPrivate: false,
-                problem: "Training deep convolutional networks from scratch on binary visual classification tasks risks overfitting and slow convergence without pretrained feature representations.",
-                architecture: "Built an automated Torchvision preprocessing and augmentation pipeline, fine-tuned a pretrained CNN backbone in PyTorch with best-checkpoint saving, and deployed live browser inference on Streamlit.",
-                results: [
-                    "Reached 95.00% validation accuracy using PyTorch transfer learning and data augmentation.",
-                    "Implemented clean inference preprocessing with probability confidence calibration.",
-                    "Deployed publicly on Streamlit for instant drag-and-drop image classification."
-                ]
-            }
-        ];
-
-        let currentFilter = "all";
-
-        function showToast(message) {
-            const toast = document.getElementById("toast");
-            document.getElementById("toastText").textContent = message;
-            toast.classList.remove("translate-y-24", "opacity-0");
-            setTimeout(() => {
-                toast.classList.add("translate-y-24", "opacity-0");
-            }, 2800);
-        }
-
-        function copyEmail() {
-            const ta = document.createElement("textarea");
-            ta.value = CONTACT_EMAIL;
-            document.body.appendChild(ta);
-            ta.select();
-            try {
-                document.execCommand("copy");
-                showToast(`Copied ${CONTACT_EMAIL} to clipboard`);
-            } catch (err) {
-                showToast(`Email: ${CONTACT_EMAIL}`);
-            }
-            document.body.removeChild(ta);
-        }
-
-        function renderProjects() {
-            const grid = document.getElementById("projectsGrid");
-            const visibleProjects = currentFilter === "all"
-                ? PROJECTS
-                : PROJECTS.filter(p => p.category === currentFilter);
-
-            grid.innerHTML = visibleProjects.map(project => {
-                const liveBtn = project.liveUrl
-                    ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs transition-colors shadow-sm shadow-emerald-500/20">
-                           <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
-                           <span>Live App</span>
-                       </a>`
-                    : "";
-
-                const repoBtn = project.isPrivate
-                    ? `<span class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-amber-500/10 text-amber-300 border border-amber-500/30 font-mono text-xs" title="Private repository under collaborative organization">
-                           <i class="fa-solid fa-lock text-[11px]"></i>
-                           <span>Private Repo</span>
-                       </span>`
-                    : `<a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-xs transition-colors">
-                           <i class="fa-brands fa-github"></i>
-                           <span>GitHub</span>
-                       </a>`;
-
-                return `
-                <article class="glass-card rounded-2xl p-6 flex flex-col h-full transition-all duration-200 hover:-translate-y-0.5">
-                    <!-- Top Header -->
-                    <div class="flex items-center justify-between gap-2 mb-3.5">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-800/90 border border-slate-700/80 text-sky-400 font-mono text-[11px]">
-                            ${project.category}
-                        </span>
-                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 font-mono text-[11px] font-semibold">
-                            ${project.metric}
-                        </span>
-                    </div>
-
-                    <!-- Title -->
-                    <h3 onclick="openProjectModal('${project.id}')" class="text-lg font-bold text-white hover:text-sky-400 transition-colors cursor-pointer leading-snug mb-2.5">
-                        ${project.title}
-                    </h3>
-
-                    <!-- Summary -->
-                    <p class="text-slate-400 text-sm leading-relaxed mb-5">
-                        ${project.summary}
-                    </p>
-
-                    <!-- Tech Tags -->
-                    <div class="flex flex-wrap gap-1.5 mb-5">
-                        ${project.tags.map(tag => `
-                            <span class="px-2.5 py-1 rounded-md bg-slate-950/80 border border-slate-800 text-[11px] font-mono text-slate-300">
-                                ${tag}
-                            </span>
-                        `).join("")}
-                    </div>
-
-                    <!-- Pinned Bottom Action Row -->
-                    <div class="mt-auto pt-4 border-t border-slate-800/90 flex items-center justify-between gap-2">
-                        <div class="flex flex-wrap items-center gap-2">
-                            ${liveBtn}
-                            ${repoBtn}
-                        </div>
-                        <button type="button" onclick="openProjectModal('${project.id}')" class="inline-flex items-center gap-1 px-2.5 py-2 rounded-xl text-xs font-mono text-sky-400 hover:bg-sky-500/10 transition-colors shrink-0">
-                            <span>Details</span>
-                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                        </button>
-                    </div>
-                </article>
-                `;
-            }).join("");
-        }
-
-        // Filter Button Handlers
-        document.querySelectorAll(".filter-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                document.querySelectorAll(".filter-btn").forEach(b => {
-                    b.className = "filter-btn px-3.5 py-2 rounded-xl text-xs font-medium bg-slate-800/90 text-slate-300 hover:bg-slate-700 border border-slate-700/80 transition-colors";
-                });
-                btn.className = "filter-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-sky-500 text-slate-950 transition-colors";
-                currentFilter = btn.getAttribute("data-filter");
-                renderProjects();
-            });
-        });
-
-        // Project Details Modal
-        function openProjectModal(projectId) {
-            const project = PROJECTS.find(p => p.id === projectId);
-            if (!project) return;
-
-            document.getElementById("modalCategory").textContent = project.category;
-            document.getElementById("modalMetric").textContent = project.metric;
-            document.getElementById("modalProjectTitle").textContent = project.title;
-            document.getElementById("modalProblem").textContent = project.problem;
-            document.getElementById("modalArchitecture").textContent = project.architecture;
-
-            document.getElementById("modalResults").innerHTML = project.results.map(item => `
-                <li class="flex items-start gap-2.5">
-                    <i class="fa-solid fa-check text-emerald-400 mt-1 text-xs"></i>
-                    <span>${item}</span>
+          <div class="lg:col-span-5 space-y-6">
+            <div class="glass rounded-2xl p-6">
+              <h3 class="font-semibold font-poppins text-lg text-gray-900 dark:text-white mb-4">Quick Profile</h3>
+              <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-location-dot text-primary-500 w-5 text-center"></i>
+                  <span>Hyderabad / Ongole, India</span>
                 </li>
-            `).join("");
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-graduation-cap text-primary-500 w-5 text-center"></i>
+                  <span>B.Tech CSE &middot; RISE Krishna Sai Prakasam Group of Institutions (CGPA 7.01)</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-chart-line text-primary-500 w-5 text-center"></i>
+                  <span>Data Analytics Intern &middot; Galactix Solutions (Feb–Mar 2026)</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-robot text-primary-500 w-5 text-center"></i>
+                  <span>Data Scientist &amp; ML Specialist &middot; Pred Ai Solutions (Apr–Oct 2026)</span>
+                </li>
+              </ul>
+            </div>
 
-            document.getElementById("modalTags").innerHTML = project.tags.map(tag => `
-                <span class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-sky-300">${tag}</span>
-            `).join("");
+            <div class="glass rounded-2xl p-6">
+              <h3 class="font-semibold font-poppins text-lg text-gray-900 dark:text-white mb-4">How I Approach Work</h3>
+              <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-check text-primary-500 mt-1 w-4 text-center"></i>
+                  <span>Check for data leakage and clean outliers before choosing complex models</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-check text-primary-500 mt-1 w-4 text-center"></i>
+                  <span>Compare clear baselines against tuned models using proper metrics</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-check text-primary-500 mt-1 w-4 text-center"></i>
+                  <span>Package results into readable dashboards or live demos people can test</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            const actions = [];
-            if (project.liveUrl) {
-                actions.push(`
-                    <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs transition-colors">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        <span>Open Live Streamlit App</span>
-                    </a>
-                `);
-            }
-            if (project.isPrivate) {
-                actions.push(`
-                    <span class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-amber-500/10 text-amber-300 border border-amber-500/30 font-mono text-xs">
-                        <i class="fa-solid fa-lock"></i>
-                        <span>Private Repository</span>
-                    </span>
-                `);
-            } else if (project.githubUrl) {
-                actions.push(`
-                    <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-semibold text-xs transition-colors">
-                        <i class="fa-brands fa-github"></i>
-                        <span>View GitHub Source</span>
-                    </a>
-                `);
-            }
-            document.getElementById("modalActions").innerHTML = actions.join("");
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-white dark:bg-navy-900 relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10 max-w-6xl">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="section-kicker">Deployed Work</span>
+          <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 dark:text-white mt-2 mb-4">Projects</h2>
+          <div class="h-1 w-24 bg-primary-500 dark:bg-primary-400 mx-auto mb-6"></div>
+          <p class="text-gray-700 dark:text-gray-300">
+            Three end-to-end projects covering large-scale flight analytics, credit default modeling, and image classification.
+          </p>
+        </div>
 
-            const modal = document.getElementById("projectModal");
-            modal.classList.remove("hidden");
-            modal.classList.add("flex");
-        }
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          <!-- Project 1: AeroPredict -->
+          <article class="glass rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col h-full">
+            <div class="h-40 bg-gradient-to-br from-primary-500/20 via-amber-500/10 to-navy-800/40 dark:from-primary-500/25 dark:to-navy-800 p-6 flex flex-col justify-between border-b border-gray-200/70 dark:border-gray-800">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300">
+                  Analytics &amp; Regression
+                </span>
+                <span class="text-xs font-semibold text-gray-700 dark:text-gray-200 bg-white/80 dark:bg-navy-900/80 px-2.5 py-1 rounded-md">
+                  5.8M+ Records
+                </span>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-300">
+                <i class="fa-solid fa-plane-departure text-primary-500"></i>
+                <span>MySQL &middot; Power BI &middot; Scikit-Learn</span>
+              </div>
+            </div>
 
-        function closeProjectModal() {
-            const modal = document.getElementById("projectModal");
-            modal.classList.add("hidden");
-            modal.classList.remove("flex");
-        }
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold font-poppins text-gray-900 dark:text-white mb-3">
+                AeroPredict: Flight Delay &amp; Network Analytics Pipeline
+              </h3>
+              <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Cleaned and preprocessed 5.8M+ operational flight records using Python, applying IQR capping (Winsorization) and Min-Max scaling. Benchmarked OLS against Ridge, Lasso, and Elastic Net models using RMSE and R^2, paired with MySQL and Power BI reporting.
+              </p>
 
-        // Backdrop & Escape Key Handlers
-        document.getElementById("projectModal").addEventListener("click", e => {
-            if (e.target.id === "projectModal") closeProjectModal();
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">Python</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">MySQL</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">Power BI</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">Ridge / Lasso / ElasticNet</span>
+              </div>
+
+              <div class="mt-auto pt-4 border-t border-gray-200/70 dark:border-gray-800 flex flex-wrap items-center gap-3">
+                <a href="https://flights-delay-predictor-9k4hus3euurmtxvrctjxtd.streamlit.app/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold transition-colors">
+                  <span>Live App</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+                </a>
+                <a href="https://github.com/InkolluPavan/flights-delay-predictor/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gray-100 dark:bg-navy-800 hover:bg-gray-200 dark:hover:bg-navy-700 text-gray-800 dark:text-gray-200 text-xs font-semibold transition-colors">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: CreditSense -->
+          <article class="glass rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col h-full">
+            <div class="h-40 bg-gradient-to-br from-amber-500/20 via-primary-500/10 to-navy-800/40 dark:from-amber-500/20 dark:to-navy-800 p-6 flex flex-col justify-between border-b border-gray-200/70 dark:border-gray-800">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300">
+                  Credit Risk ML
+                </span>
+                <span class="text-xs font-semibold text-gray-700 dark:text-gray-200 bg-white/80 dark:bg-navy-900/80 px-2.5 py-1 rounded-md">
+                  0.9565 ROC-AUC
+                </span>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-300">
+                <i class="fa-solid fa-shield-halved text-primary-500"></i>
+                <span>XGBoost &middot; LightGBM &middot; LSTM &middot; SHAP</span>
+              </div>
+            </div>
+
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold font-poppins text-gray-900 dark:text-white mb-3">
+                CreditSense: Credit Risk Prediction Pipeline
+              </h3>
+              <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Built a loan delinquency scoring workflow targeting <code class="text-xs px-1 py-0.5 rounded bg-gray-200/80 dark:bg-navy-800">npd_90</code> with chronological validation and strict removal of post-origination leakage. Tuned models with Optuna, interpreted feature drivers with SHAP, benchmarked LSTM against gradient boosting, and connected AWS S3 and Supabase feature prep.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">XGBoost / LightGBM</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">LSTM</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">Optuna &amp; SHAP</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">AWS S3 &amp; Supabase</span>
+              </div>
+
+              <div class="mt-auto pt-4 border-t border-gray-200/70 dark:border-gray-800 flex items-center justify-between gap-2">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 text-xs font-semibold">
+                  <i class="fa-solid fa-lock text-[11px]"></i>
+                  <span>Private Repo</span>
+                </span>
+                <span class="text-xs text-gray-500 dark:text-gray-400">Chronological Split</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Cat vs Dog Classifier -->
+          <article class="glass rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col h-full">
+            <div class="h-40 bg-gradient-to-br from-primary-600/20 via-orange-400/10 to-navy-800/40 dark:from-primary-600/25 dark:to-navy-800 p-6 flex flex-col justify-between border-b border-gray-200/70 dark:border-gray-800">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300">
+                  Computer Vision
+                </span>
+                <span class="text-xs font-semibold text-gray-700 dark:text-gray-200 bg-white/80 dark:bg-navy-900/80 px-2.5 py-1 rounded-md">
+                  95.00% Val Acc
+                </span>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-300">
+                <i class="fa-solid fa-camera text-primary-500"></i>
+                <span>PyTorch &middot; OpenCV &middot; ResNet18</span>
+              </div>
+            </div>
+
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold font-poppins text-gray-900 dark:text-white mb-3">
+                Cat vs. Dog Image Classification Pipeline
+              </h3>
+              <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Built a binary image classification workflow using PyTorch, TensorFlow, and OpenCV with rotation, scaling, flipping, and normalization augmentation. Benchmarked a custom 3-layer CNN against fine-tuned ResNet18 transfer learning and tracked Precision, Recall, and ROC-AUC.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">PyTorch / TensorFlow</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">OpenCV</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">ResNet18 Transfer Learning</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-gray-100 dark:bg-navy-800 text-gray-700 dark:text-gray-300">ROC-AUC</span>
+              </div>
+
+              <div class="mt-auto pt-4 border-t border-gray-200/70 dark:border-gray-800 flex flex-wrap items-center gap-3">
+                <a href="https://catsdogsclassification-3tyssjjcp3jjqxf23hg4bv.streamlit.app/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold transition-colors">
+                  <span>Live App</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+                </a>
+                <a href="https://github.com/InkolluPavan/cats_dogs_classification" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gray-100 dark:bg-navy-800 hover:bg-gray-200 dark:hover:bg-navy-700 text-gray-800 dark:text-gray-200 text-xs font-semibold transition-colors">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-gray-50 dark:bg-navy-900/50 relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10 max-w-5xl">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="section-kicker">Toolkit</span>
+          <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 dark:text-white mt-2 mb-4">
+            Skills &amp; Technologies
+          </h2>
+          <div class="h-1 w-24 bg-primary-500 dark:bg-primary-400 mx-auto mb-6"></div>
+          <p class="text-gray-700 dark:text-gray-300">
+            Tools and techniques I use for data analysis, machine learning, deep learning, and app delivery.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+          <div class="glass rounded-2xl p-6 flex flex-col">
+            <h3 class="skills-category__label text-gray-900 dark:text-white">
+              <i class="fa-solid fa-code text-primary-500 mr-2"></i>Languages &amp; Core
+            </h3>
+            <div class="skills-category__tags">
+              <span>Python</span><span>NumPy</span><span>Pandas</span><span>SQL</span><span>Java</span><span>C</span>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-6 flex flex-col">
+            <h3 class="skills-category__label text-gray-900 dark:text-white">
+              <i class="fa-solid fa-brain text-primary-500 mr-2"></i>Machine Learning &amp; DL
+            </h3>
+            <div class="skills-category__tags">
+              <span>Scikit-Learn</span><span>XGBoost</span><span>LightGBM</span><span>PyTorch</span><span>TensorFlow</span><span>LSTM</span><span>CNN</span><span>ResNet</span><span>SHAP</span><span>Optuna</span>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-6 flex flex-col">
+            <h3 class="skills-category__label text-gray-900 dark:text-white">
+              <i class="fa-solid fa-chart-bar text-primary-500 mr-2"></i>Data, BI &amp; Feature Engineering
+            </h3>
+            <div class="skills-category__tags">
+              <span>MySQL Workbench</span><span>Power BI</span><span>Feature Scaling</span><span>Winsorization / IQR</span><span>Data Leakage Prevention</span>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-6 flex flex-col">
+            <h3 class="skills-category__label text-gray-900 dark:text-white">
+              <i class="fa-solid fa-cloud text-primary-500 mr-2"></i>Cloud, Databases &amp; Tools
+            </h3>
+            <div class="skills-category__tags">
+              <span>AWS S3</span><span>Supabase</span><span>Git</span><span>GitHub</span><span>Streamlit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education, Internships & Training Section -->
+    <section id="education" class="py-24 bg-white dark:bg-navy-900 relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10 max-w-6xl">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="section-kicker">Academic &amp; Applied Background</span>
+          <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 dark:text-white mt-2 mb-4">
+            Education &amp; Training
+          </h2>
+          <div class="h-1 w-24 bg-primary-500 dark:bg-primary-400 mx-auto mb-6"></div>
+          <p class="text-gray-700 dark:text-gray-300">
+            My computer science degree along with hands-on internship and data science training programs.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          <!-- Education Card -->
+          <div class="glass rounded-2xl p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-11 h-11 bg-primary-500/10 rounded-full flex items-center justify-center text-primary-500">
+                  <i class="fa-solid fa-graduation-cap text-lg"></i>
+                </div>
+                <div>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">2020 &ndash; 2024</span>
+                  <h3 class="text-xl font-bold font-poppins text-gray-900 dark:text-white">Education</h3>
+                </div>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                B.Tech. Computer Science &amp; Engineering
+              </h4>
+              <p class="text-primary-600 dark:text-primary-400 font-medium mt-1">
+                RISE Krishna Sai Prakasam Group of Institutions, Ongole
+              </p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                CGPA: <strong class="text-gray-900 dark:text-white">7.01</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Internships & Training Card -->
+          <div class="glass rounded-2xl p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-11 h-11 bg-primary-500/10 rounded-full flex items-center justify-center text-primary-500">
+                  <i class="fa-solid fa-certificate text-lg"></i>
+                </div>
+                <div>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">2025 &ndash; 2026</span>
+                  <h3 class="text-xl font-bold font-poppins text-gray-900 dark:text-white">Internships &amp; Training</h3>
+                </div>
+              </div>
+
+              <ul class="space-y-4 text-sm">
+                <li class="border-b border-gray-200/70 dark:border-gray-800 pb-3">
+                  <div class="flex flex-wrap items-center justify-between gap-1">
+                    <span class="font-semibold text-gray-900 dark:text-white">Certified Data Scientist &amp; ML Specialist</span>
+                    <span class="text-xs text-primary-600 dark:text-primary-400 font-medium">Apr 2026 &ndash; Oct 2026</span>
+                  </div>
+                  <p class="text-gray-600 dark:text-gray-400 mt-0.5">Pred Ai Solutions &middot; ML, Deep Learning, Statistics &amp; Model Deployment</p>
+                </li>
+
+                <li class="border-b border-gray-200/70 dark:border-gray-800 pb-3">
+                  <div class="flex flex-wrap items-center justify-between gap-1">
+                    <span class="font-semibold text-gray-900 dark:text-white">Data Analytics Intern</span>
+                    <span class="text-xs text-primary-600 dark:text-primary-400 font-medium">Feb 2026 &ndash; Mar 2026</span>
+                  </div>
+                  <p class="text-gray-600 dark:text-gray-400 mt-0.5">Galactix Solutions &middot; Real-time dataset cleaning, reporting &amp; dashboards</p>
+                </li>
+
+                <li>
+                  <div class="flex flex-wrap items-center justify-between gap-1">
+                    <span class="font-semibold text-gray-900 dark:text-white">Data Science Training</span>
+                    <span class="text-xs text-primary-600 dark:text-primary-400 font-medium">Jul 2025 &ndash; Jan 2026</span>
+                  </div>
+                  <p class="text-gray-600 dark:text-gray-400 mt-0.5">Unicus Learning &middot; SQL, Power BI, Statistics, ML, Deep Learning &amp; Deployment</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-50 dark:bg-navy-900/50 relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10 max-w-5xl">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="section-kicker">Get In Touch</span>
+          <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 dark:text-white mt-2 mb-4">Contact</h2>
+          <div class="h-1 w-24 bg-primary-500 dark:bg-primary-400 mx-auto mb-6"></div>
+          <p class="text-gray-700 dark:text-gray-300">
+            Open to Data Analyst, Data Scientist, and Machine Learning Engineer roles. Reach out directly via email, phone, or LinkedIn.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="glass rounded-2xl p-8 space-y-6">
+            <h3 class="text-xl font-bold font-poppins text-gray-900 dark:text-white">Direct Contact</h3>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-primary-500/10 rounded-full flex items-center justify-center text-primary-500 shrink-0">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Email</h4>
+                <a href="mailto:ipavan.2510@gmail.com" class="text-sm text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400">
+                  ipavan.2510@gmail.com
+                </a>
+                <div class="mt-2">
+                  <button type="button" id="copy-email-btn"
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-500/15 hover:bg-primary-500/25 text-primary-700 dark:text-primary-300 text-xs font-medium transition-colors">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>Copy Email</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-primary-500/10 rounded-full flex items-center justify-center text-primary-500 shrink-0">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Phone</h4>
+                <a href="tel:+917330834674" class="text-sm text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400">
+                  +91 7330834674
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-primary-500/10 rounded-full flex items-center justify-center text-primary-500 shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Location</h4>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Hyderabad / Ongole, India</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-8 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold font-poppins text-gray-900 dark:text-white mb-3">Profiles &amp; Code</h3>
+              <p class="text-sm text-gray-700 dark:text-gray-300 mb-6">
+                Explore repositories on GitHub or connect on LinkedIn for opportunities and collaborations.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="https://www.linkedin.com/in/inkollu-venkata-pavan-59a001241/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium transition-colors">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/InkolluPavan" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-900 dark:bg-navy-800 hover:bg-gray-800 dark:hover:bg-navy-700 text-white text-sm font-medium transition-colors">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-8">
+              Venkata Pavan Inkollu &middot; Data Scientist &amp; ML Engineer
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 bg-navy-900 text-white border-t border-gray-800 relative z-10">
+    <div class="container mx-auto px-6 max-w-6xl flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+      <p class="text-gray-400">&copy; 2026 Venkata Pavan Inkollu. All rights reserved.</p>
+      <div class="flex flex-wrap items-center gap-6">
+        <a href="#about" class="text-gray-400 hover:text-primary-400 transition-colors">About</a>
+        <a href="#projects" class="text-gray-400 hover:text-primary-400 transition-colors">Projects</a>
+        <a href="#skills" class="text-gray-400 hover:text-primary-400 transition-colors">Skills</a>
+        <a href="#education" class="text-gray-400 hover:text-primary-400 transition-colors">Education</a>
+        <a href="https://github.com/InkolluPavan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-400 transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/inkollu-venkata-pavan-59a001241/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-400 transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="copy-toast"
+    class="fixed bottom-20 right-6 z-50 px-4 py-2.5 rounded-xl bg-gray-900 dark:bg-navy-800 text-white text-xs font-medium shadow-xl border border-primary-500/40 opacity-0 translate-y-4 pointer-events-none transition-all duration-300">
+    Email copied: ipavan.2510@gmail.com
+  </div>
+
+  <!-- Particles.js CDN -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    (function () {
+      const htmlEl = document.documentElement;
+      const themeToggleBtn = document.getElementById('theme-toggle-button');
+      const scrollTopBtn = document.getElementById('scroll-top');
+      const mobileMenuBtn = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+      const mobileMenuContent = document.getElementById('mobile-menu-content');
+      const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+      const copyEmailBtn = document.getElementById('copy-email-btn');
+      const copyToast = document.getElementById('copy-toast');
+
+      // Theme toggle (defaults to dark mode)
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function () {
+          htmlEl.classList.toggle('dark');
         });
-        document.addEventListener("keydown", e => {
-            if (e.key === "Escape") {
-                closeProjectModal();
-            }
-        });
+      }
 
-        // Initial Render
-        renderProjects();
-    </script>
+      // Scroll-to-top visibility and click handler
+      window.addEventListener('scroll', function () {
+        if (!scrollTopBtn) return;
+        if (window.scrollY > 350) {
+          scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+          scrollTopBtn.classList.add('opacity-100');
+        } else {
+          scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+          scrollTopBtn.classList.remove('opacity-100');
+        }
+      });
+
+      if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Mobile drawer open/close
+      function openMobileMenu() {
+        if (!mobileMenu || !mobileMenuContent) return;
+        mobileMenu.classList.remove('hidden');
+        requestAnimationFrame(function () {
+          mobileMenuContent.classList.remove('translate-x-full');
+        });
+      }
+
+      function closeMobileMenu() {
+        if (!mobileMenu || !mobileMenuContent) return;
+        mobileMenuContent.classList.add('translate-x-full');
+        setTimeout(function () {
+          mobileMenu.classList.add('hidden');
+        }, 300);
+      }
+
+      if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+      if (closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+      if (mobileMenuBackdrop) mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+
+      document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      // Copy email with fallback
+      if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', function () {
+          const email = 'ipavan.2510@gmail.com';
+          const tempInput = document.createElement('textarea');
+          tempInput.value = email;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          try {
+            document.execCommand('copy');
+          } catch (e) {
+            // Ignore clipboard copy failure in restricted frames
+          }
+          document.body.removeChild(tempInput);
+
+          if (copyToast) {
+            copyToast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            setTimeout(function () {
+              copyToast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            }, 2400);
+          }
+        });
+      }
+
+      // Initialize subtle particles background if available
+      if (typeof particlesJS === 'function' && document.getElementById('particles-js')) {
+        try {
+          particlesJS('particles-js', {
+            particles: {
+              number: { value: 36, density: { enable: true, value_area: 900 } },
+              color: { value: '#FF5722' },
+              opacity: { value: 0.2, random: true },
+              size: { value: 3, random: true },
+              line_linked: {
+                enable: true,
+                distance: 140,
+                color: '#FF5722',
+                opacity: 0.12,
+                width: 1
+              },
+              move: { enable: true, speed: 1.2, out_mode: 'out' }
+            },
+            interactivity: { events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
+            retina_detect: true
+          });
+        } catch (err) {
+          // Safe fallback if particles initialization is blocked
+        }
+      }
+    })();
+  </script>
 </body>
+
 </html>
